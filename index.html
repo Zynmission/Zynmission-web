@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>ZynMission — Secret Adventures</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- TonConnect UI (optional) -->
+  <script src="https://unpkg.com/@tonconnect/ui/dist/tonconnect-ui.js"></script>
+</head>
+<body>
+  <div id="app" class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">Z</div>
+        <div class="title">ZynMission</div>
+      </div>
+      <div class="controls">
+        <button id="btn-wallet" class="btn">Connect Wallet</button>
+        <button id="btn-open-game" class="btn primary">Open Adventure</button>
+      </div>
+    </header>
+
+    <main id="main" class="main">
+      <!-- Landing / Dashboard -->
+      <section id="dashboard" class="page active">
+        <div class="panel left">
+          <div id="profileCard" class="card profile">
+            <img id="profileAvatar" class="avatar" src="default-avatar.png" alt="avatar">
+            <div class="profile-info">
+              <div id="profileName" class="name">Guest Player</div>
+              <div id="profileId" class="small">ID: —</div>
+              <div class="stats">
+                <div>Points: <span id="points">0</span></div>
+                <div>ZYN: <span id="zyn">0</span></div>
+                <div>Referrals: <span id="refCount">0</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card actions">
+            <h3>Quick Actions</h3>
+            <button id="claimDaily" class="btn full">Claim Daily +20 pts</button>
+            <button id="startMissionBtn" class="btn full">Start Mission (Win → +50 pts)</button>
+            <button id="convertBtn" class="btn full">Convert 500 pts → 3 ZYN</button>
+            <div class="referral">
+              <label>Your referral link</label>
+              <input id="referralLink" readonly />
+              <small>Share to earn referral points when someone registers via your link.</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel right">
+          <div class="card leaderboard">
+            <h3>Leaderboard — Top Agents</h3>
+            <ol id="leaderboardList"></ol>
+          </div>
+
+          <div class="card daily-challenges">
+            <h3>Daily Tasks (earn tokens)</h3>
+            <ul>
+              <li>⭐ Give 100 stars on a channel post → +5 ZYN (verify via bot)</li>
+              <li>🔊 Boost 2 posts to channel → +5 ZYN</li>
+              <li>👥 Bring 10 members to channel/group → +5 ZYN</li>
+            </ul>
+            <small>These tasks require bot verification and channel permissions (real actions to be verified server-side).</small>
+          </div>
+        </div>
+      </section>
+
+      <!-- Game Fullscreen Page -->
+      <section id="gamePage" class="page">
+        <div class="game-top">
+          <button id="gameBack" class="btn">Back</button>
+          <div class="game-stats">Stage <span id="stageNo">1</span> / 15 — Challenge <span id="challengeNo">1</span> / 8</div>
+          <div class="game-score">Points: <span id="gamePoints">0</span></div>
+        </div>
+
+        <div id="gameCanvas" class="game-canvas">
+          <!-- Challenge content injected here -->
+          <div id="challengeArea" class="challenge-area"></div>
+          <div class="game-controls">
+            <button id="btn-ok" class="btn primary">Submit</button>
+            <button id="btn-skip" class="btn">Skip (no reward)</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Leaderboard page (full) -->
+      <section id="leaderboardPage" class="page">
+        <button id="lbBack" class="btn">Back</button>
+        <h2>Global Leaderboard</h2>
+        <ol id="leaderListFull"></ol>
+      </section>
+
+      <!-- Profile page (full) -->
+      <section id="profilePage" class="page">
+        <button id="profileBack" class="btn">Back</button>
+        <h2>Your Profile</h2>
+        <div class="card profile-large">
+          <img id="pAvatar" class="avatar-large" src="default-avatar.png" alt="avatar">
+          <div class="pinfo">
+            <h3 id="pName">Guest Player</h3>
+            <p>ID: <span id="pId">—</span></p>
+            <p>Points: <span id="pPoints">0</span></p>
+            <p>ZYN: <span id="pZyn">0</span></p>
+            <p>Referrals: <span id="pRefs">0</span></p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <div>© ZynMission — Secret Adventures</div>
+      <div class="small">Open inside Telegram Mini App for profile auto-fill. Connect wallet to buy ZYN (TonConnect).</div>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+                </html>
