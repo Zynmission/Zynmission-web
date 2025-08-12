@@ -1,0 +1,49 @@
+:root{
+  --bg1:#05060a;
+  --bg2:#0f1020;
+  --accent:#ffb86b;
+  --card:#0f1724;
+  --glass: rgba(255,255,255,0.03);
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,Arial;background:linear-gradient(180deg,var(--bg1),var(--bg2));color:#e6eef8;min-height:100vh}
+.app{display:flex;flex-direction:column;min-height:100vh}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:12px 20px;border-bottom:1px solid rgba(255,255,255,0.03);backdrop-filter:blur(6px)}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:42px;height:42px;border-radius:8px;background:linear-gradient(135deg,#6a5cff,#ffb86b);display:flex;align-items:center;justify-content:center;font-weight:700;color:#0b0b0b;font-size:24px}
+.title{font-weight:700;font-size:18px}
+.controls{display:flex;gap:8px}
+.btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:8px;color:inherit;cursor:pointer}
+.btn.primary{background:linear-gradient(90deg,#6a5cff,#ffb86b);color:#071026;border:none}
+.main{flex:1;display:flex;padding:20px;gap:18px;align-items:flex-start}
+.page{display:none;width:100%}
+.page.active{display:flex;gap:18px;width:100%}
+.panel{flex:1;display:flex;flex-direction:column;gap:18px}
+.panel.right{max-width:420px}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:16px;border-radius:12px;box-shadow:0 6px 20px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)}
+.profile{display:flex;gap:12px;align-items:center}
+.avatar{width:72px;height:72px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,0.06)}
+.profile-info .name{font-weight:700;font-size:18px}
+.small{font-size:12px;color:#9fb0c6}
+.stats{margin-top:8px;display:flex;gap:10px;font-size:14px;color:#cfe8ff}
+.actions .full{width:100%;margin-top:6px}
+.referral input{width:100%;padding:8px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.04);color:inherit}
+
+.leaderboard ol{padding-left:18px}
+.daily-challenges ul{padding-left:18px}
+
+.game-top{display:flex;justify-content:space-between;align-items:center;padding:12px 0}
+.game-canvas{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;border-radius:12px}
+.challenge-area{width:100%;max-width:900px;height:60vh;background:linear-gradient(180deg,#07122a,#081226);border-radius:12px;padding:24px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.game-controls{margin-top:12px;display:flex;gap:8px}
+
+.page.fullscreen{position:fixed;inset:0;z-index:100;background:var(--bg1);padding:20px}
+
+.footer{padding:12px 20px;border-top:1px solid rgba(255,255,255,0.03);display:flex;justify-content:space-between;align-items:center;color:#9fb0c6;font-size:13px}
+
+/* responsive */
+@media (max-width:900px){
+  .main{flex-direction:column;padding:12px}
+  .panel.right{max-width:none}
+  .challenge-area{height:50vh}
+}
